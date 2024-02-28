@@ -1,0 +1,27 @@
+StockDto:
+  type: "object"
+  properties:
+    id:
+      type: "string"
+    nasdaq_traded:
+      type: "string"
+    security_name:
+      type: "string"
+    listing_exchange:
+      type: "string"
+    market_category:
+      type: "string"
+    etf:
+      type: "string"
+    round_lot_size:
+      type: "integer"
+    test_issue:
+      type: "string"
+    financial_status:
+      type: "string"
+    cqs_symbol:
+      type: "string"
+    nasdaq_symbol:
+      type: "string"
+    next_shares:
+      type: "string"
