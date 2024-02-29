@@ -9,8 +9,7 @@ Base = declarative_base()
 # Define the Stock model
 class StockMain(Base):
     __tablename__ = 'StockMain'
-
-    id = Column(Integer, primary_key=True)
+    symbol = Column(String, primary_key=True)
     nasdaq_traded = Column(String)
     security_name = Column(String)
     listing_exchange = Column(String)
@@ -21,7 +20,7 @@ class StockMain(Base):
     financial_status = Column(String)
     cqs_symbol = Column(String)
     nasdaq_symbol = Column(String)
-    next_shares = Column(String)
+    nextshares = Column(String)
 
 
 

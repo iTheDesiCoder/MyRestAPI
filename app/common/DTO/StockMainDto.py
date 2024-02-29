@@ -2,8 +2,8 @@ from dataclasses import dataclass
 
 
 @dataclass
-class StockDto:
-    id: str
+class StockMainDto:
+    symbol: str
     nasdaq_traded: str
     security_name: str
     listing_exchange: str
@@ -14,12 +14,12 @@ class StockDto:
     financial_status: str
     cqs_symbol: str
     nasdaq_symbol: str
-    next_shares: str
+    nextshares: str
 
     @classmethod
     def from_model(cls, model):
         return cls(
-            id=model.id,
+            symbol=model.symbol,
             nasdaq_traded=model.nasdaq_traded,
             security_name=model.security_name,
             listing_exchange=model.listing_exchange,
@@ -30,5 +30,5 @@ class StockDto:
             financial_status=model.financial_status,
             cqs_symbol=model.cqs_symbol,
             nasdaq_symbol=model.nasdaq_symbol,
-            next_shares=model.next_shares,
+            nextshares=model.nextshares,
         )
