@@ -1,8 +1,10 @@
 # Desc: Main entry point for the application
-from flask import Flask
-from flasgger import Swagger
-from app.contoller import stock_blueprint
+from fastapi import FastAPI
+from debug_toolbar.middleware import DebugToolbarMiddleware
+from app.globalexceptionhandler import GlobalExceptionHandler
+from app.contoller import stock_router
 
-app = Flask(__name__)
-app.register_blueprint(stock_blueprint)
-swagger = Swagger(app)
+app = FastAPI(debug=True)
+app.add_middleware(DebugToolbarMiddleware)
+app.exception_handler(Exception)(GlobalExceptionHandler.exception_handler)
+app.include_router(stock_router)

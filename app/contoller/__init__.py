@@ -1,1 +1,1 @@
-from .StockMainController import stock_blueprint
+from .StockMainController import stock_router

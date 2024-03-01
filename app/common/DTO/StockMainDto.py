@@ -1,8 +1,7 @@
-from dataclasses import dataclass
+from pydantic import BaseModel
 
 
-@dataclass
-class StockMainDto:
+class StockMainDto(BaseModel):
     symbol: str
     nasdaq_traded: str
     security_name: str
@@ -32,3 +31,6 @@ class StockMainDto:
             nasdaq_symbol=model.nasdaq_symbol,
             nextshares=model.nextshares,
         )
+
+    def to_dict(self):
+        return self.dict()
